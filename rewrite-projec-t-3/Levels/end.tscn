@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://elxbmlyxa5ls"]
+
+[ext_resource type="Theme" uid="uid://bpbd56dj3g4u4" path="res://sci-fi game assets/UI/menu_theme.tres" id="1_8a2pq"]
+[ext_resource type="Script" uid="uid://jp1w8mnaw62w" path="res://Scripts/end.gd" id="2_2bx7m"]
+[ext_resource type="FontFile" uid="uid://y3bs0rgberwy" path="res://sci-fi game assets/UI/Fonts/fusion-pixel-12px-monospaced-zh_hans.ttf" id="2_7isrc"]
+[ext_resource type="Script" uid="uid://fua4eob73lxp" path="res://Scripts/continue_label.gd" id="3_2bx7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnvp3"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30980393, 0.81960785, 1, 0.3137255)
+
+[sub_resource type="FontVariation" id="FontVariation_6cta5"]
+base_font = ExtResource("2_7isrc")
+spacing_glyph = 4
+
+[sub_resource type="FontVariation" id="FontVariation_nnvp3"]
+base_font = ExtResource("2_7isrc")
+spacing_glyph = 7
+
+[node name="End" type="Control" unique_id=1264235154]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8a2pq")
+script = ExtResource("2_2bx7m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1046822009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.0627451, 0.1254902, 1)
+
+[node name="Decoration" type="Control" parent="." unique_id=360211390]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Decoration" unique_id=1017494335]
+layout_mode = 1
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 156.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 0.6)
+theme_override_font_sizes/font_size = 12
+text = "T-3 // MISSION LOG"
+
+[node name="Label2" type="Label" parent="Decoration" unique_id=1346506511]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 764.0
+offset_top = 40.0
+offset_right = 1064.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 0.6)
+theme_override_font_sizes/font_size = 12
+text = "STATUS: COMPLETE"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="Decoration" unique_id=582347846]
+layout_mode = 1
+offset_left = 48.0
+offset_top = 590.0
+offset_right = 156.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 0.6)
+theme_override_font_sizes/font_size = 12
+text = "LINK: HEADQUARTERS ONLINE"
+
+[node name="Label4" type="Label" parent="Decoration" unique_id=1848551546]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 764.0
+offset_top = 550.0
+offset_right = 1064.0
+offset_bottom = 574.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 0.6)
+theme_override_font_sizes/font_size = 12
+text = "SIGNAL: ESTABLISHED"
+horizontal_alignment = 2
+
+[node name="Frame" type="Panel" parent="." unique_id=92872826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnvp3")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=166390006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer" unique_id=796240711]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ProjectName" type="Label" parent="CenterContainer/Content" unique_id=784407974]
+custom_minimum_size = Vector2(620, 42)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 0.7019608)
+theme_override_fonts/font = SubResource("FontVariation_6cta5")
+theme_override_font_sizes/font_size = 24
+text = "REWRITE PROJECT T-3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/Content" unique_id=638088322]
+custom_minimum_size = Vector2(620, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.03137255, 0.49803922, 0.65882355, 0.5019608)
+theme_override_colors/font_outline_color = Color(0.30980393, 0.81960785, 1, 0.34901962)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = SubResource("FontVariation_nnvp3")
+theme_override_font_sizes/font_size = 72
+text = "END"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/Content" unique_id=753733819]
+custom_minimum_size = Vector2(260, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.30980393, 0.81960785, 1, 1)
+
+[node name="Subtitle" type="Label" parent="CenterContainer/Content" unique_id=1869686700]
+custom_minimum_size = Vector2(620, 42)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7490196, 0.9019608, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "MISSION ACCOMPLISHED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="CenterContainer/Content" unique_id=1614434706]
+custom_minimum_size = Vector2(620, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49803922, 0.8627451, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "PRESS ANY KEY TO CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_2bx7m")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://co0vixioi1v11"]
+
+[ext_resource type="AudioStream" uid="uid://8f0nopwbqqkf" path="res://sci-fi game assets/audio/Background_music.mp3" id="1_oddit"]
+
+[node name="Background_music" type="AudioStreamPlayer" unique_id=1011393348]
+stream = ExtResource("1_oddit")
+volume_db = -20.0

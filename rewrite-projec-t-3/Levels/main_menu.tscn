@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://wypetnwtdqik"]
+
+[ext_resource type="Script" uid="uid://cvtakq5q4q3gn" path="res://Scripts/main_menu.gd" id="1_6ucrw"]
+[ext_resource type="Theme" uid="uid://bpbd56dj3g4u4" path="res://sci-fi game assets/UI/menu_theme.tres" id="1_jy27m"]
+
+[node name="MainMenu" type="Control" unique_id=1337036392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jy27m")
+script = ExtResource("1_6ucrw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1062423667]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.0627451, 0.12156863, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1881198011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBox" type="VBoxContainer" parent="CenterContainer" unique_id=1092129275]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="CenterContainer/MenuBox" unique_id=460298666]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Rewrite Project T-3"
+
+[node name="StartButton" type="Button" parent="CenterContainer/MenuBox" unique_id=1517580498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Start"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/MenuBox" unique_id=697468239]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Credits"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/MenuBox" unique_id=987856119]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/MenuBox" unique_id=38370259]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Quit"
+
+[node name="CreditsPanel" type="VBoxContainer" parent="CenterContainer" unique_id=884178336]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CeridtsLabel" type="Label" parent="CenterContainer/CreditsPanel" unique_id=1483523288]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "By Lucky and Leon"
+
+[node name="BackButton" type="Button" parent="CenterContainer/CreditsPanel" unique_id=1002671901]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Back"
+
+[node name="SettingsPanel" type="VBoxContainer" parent="CenterContainer" unique_id=646962073]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsPanel" unique_id=1191991782]
+layout_mode = 2
+text = "Go right: D, right arrow
+Go left: A, left arrow
+Jump: W, space, up arrow
+Pause: esc
+Rewind(Return to the position three seconds ago): Q
+Phase(Temporarily pass through obstacles and avoid attacks): E"
+
+[node name="SettingsBackButton" type="Button" parent="CenterContainer/SettingsPanel" unique_id=81337472]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Back"

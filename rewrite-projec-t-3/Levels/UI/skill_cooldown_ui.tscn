@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://br03u4s7nhp0x"]
+
+[ext_resource type="Script" uid="uid://bcd3xbgfdxflt" path="res://Scripts/skill_cooldown_ui.gd" id="1_yk3j5"]
+[ext_resource type="FontFile" uid="uid://y3bs0rgberwy" path="res://sci-fi game assets/UI/Fonts/fusion-pixel-12px-monospaced-zh_hans.ttf" id="2_yicag"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yk3j5"]
+bg_color = Color(0.0627451, 0.105882354, 0.14901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.20392157, 0.31764707, 0.36862746, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu5cl"]
+bg_color = Color(0.16078432, 0.23137255, 0.2784314, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp20x"]
+bg_color = Color(0.33333334, 0.8, 0.85882354, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SkillCooldownUI" type="CanvasLayer" unique_id=469542146]
+script = ExtResource("1_yk3j5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1714059679]
+offset_left = 880.0
+offset_top = 450.0
+offset_right = 1100.0
+offset_bottom = 530.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yk3j5")
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=1953863318]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 115.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.8901961, 0.92941177, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("2_yicag")
+theme_override_font_sizes/font_size = 18
+text = "REWIND [Q]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewindLabel" type="Label" parent="Panel" unique_id=612949222]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 14.0
+offset_right = 200.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.40784314, 0.8627451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("2_yicag")
+theme_override_font_sizes/font_size = 18
+text = "READY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewindCooldownBar" type="ProgressBar" parent="Panel" unique_id=458728256]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 47.0
+offset_right = 204.0
+offset_bottom = 59.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pu5cl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lp20x")
+value = 100.0
+show_percentage = false
+
+[node name="Panel2" type="Panel" parent="." unique_id=1479141182]
+offset_left = 880.0
+offset_top = 540.0
+offset_right = 1100.0
+offset_bottom = 620.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yk3j5")
+
+[node name="TitleLabel" type="Label" parent="Panel2" unique_id=1976546871]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 115.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.8901961, 0.92941177, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("2_yicag")
+theme_override_font_sizes/font_size = 18
+text = "PHASE [E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PhaseLabel" type="Label" parent="Panel2" unique_id=1004313298]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 14.0
+offset_right = 200.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.40784314, 0.8627451, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("2_yicag")
+theme_override_font_sizes/font_size = 18
+text = "READY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PhaseCooldownBar" type="ProgressBar" parent="Panel2" unique_id=274251738]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 47.0
+offset_right = 204.0
+offset_bottom = 59.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pu5cl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lp20x")
+value = 100.0
+show_percentage = false

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b4ymjkonvptqg"]
+
+[ext_resource type="Theme" uid="uid://bpbd56dj3g4u4" path="res://sci-fi game assets/UI/menu_theme.tres" id="1_811yh"]
+[ext_resource type="Script" uid="uid://bixm4fvb0qchp" path="res://Scripts/intro.gd" id="2_02un3"]
+
+[node name="Intro" type="Control" unique_id=1635890557]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_811yh")
+script = ExtResource("2_02un3")
+line_pause = 1.0
+
+[node name="Background" type="ColorRect" parent="." unique_id=1946272475]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2139015434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StoryLabel" type="Label" parent="CenterContainer" unique_id=144807603]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3

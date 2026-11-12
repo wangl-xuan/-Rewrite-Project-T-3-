@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c3kxdd6jaeiqu"]
+
+[ext_resource type="Texture2D" uid="uid://qr8jc5jroo4x" path="res://sci-fi game assets/tile set/scifi_animated_tileset_32.png" id="1_ykoof"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpkmm"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(640, 68, 64, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s7ai"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(704, 68, 64, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pqkf"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(768, 68, 64, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtb8d"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(832, 68, 64, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76xqn"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(896, 68, 64, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdcrp"]
+atlas = ExtResource("1_ykoof")
+region = Rect2(960, 68, 64, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnvp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpkmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s7ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pqkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtb8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76xqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdcrp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk57d"]
+size = Vector2(53.5, 26)
+
+[node name="platform" type="AnimatableBody2D" unique_id=1139274567]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438910220]
+sprite_frames = SubResource("SpriteFrames_nnvp3")
+autoplay = "default"
+frame_progress = 0.7657279
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469344204]
+position = Vector2(-0.25, -2)
+shape = SubResource("RectangleShape2D_lk57d")

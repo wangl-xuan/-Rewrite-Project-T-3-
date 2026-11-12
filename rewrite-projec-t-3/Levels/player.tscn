@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://uhgsotpuft2o" path="res://Scripts/player.gd" id="1_vyvq2"]
 [ext_resource type="Texture2D" uid="uid://dd7jf365q3gva" path="res://sci-fi game assets/tile set/character tile set.png" id="2_cko2x"]
+[ext_resource type="AudioStream" uid="uid://dq34onikc4xw5" path="res://sci-fi game assets/audio/sounds/walk/footstep00.ogg" id="3_ln1lg"]
+[ext_resource type="AudioStream" uid="uid://4grb4t7h126k" path="res://sci-fi game assets/audio/sounds/walk/footstep01.ogg" id="4_wpukm"]
+[ext_resource type="AudioStream" uid="uid://ca4oqykpk8i65" path="res://sci-fi game assets/audio/sounds/walk/footstep02.ogg" id="5_yiue1"]
+[ext_resource type="AudioStream" uid="uid://u1x6wfbygkpj" path="res://sci-fi game assets/audio/sounds/walk/footstep03.ogg" id="6_7v3gk"]
+[ext_resource type="AudioStream" uid="uid://b7pweffvjpj1j" path="res://sci-fi game assets/audio/sounds/walk/footstep04.ogg" id="7_i638c"]
+[ext_resource type="AudioStream" uid="uid://d01snvhsxlbfv" path="res://sci-fi game assets/audio/sounds/walk/footstep05.ogg" id="8_d1kdx"]
+[ext_resource type="AudioStream" uid="uid://e8bndhxqh35" path="res://sci-fi game assets/audio/sounds/jump.mp3" id="9_wpukm"]
+[ext_resource type="Script" uid="uid://dq23fy4043cla" path="res://Scripts/rewinder.gd" id="10_yiue1"]
+[ext_resource type="Script" uid="uid://biiytb2fjqx4x" path="res://Scripts/phaser.gd" id="11_7v3gk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwlcl"]
 atlas = ExtResource("2_cko2x")
@@ -55,22 +64,6 @@ region = Rect2(96, 128, 32, 32)
 atlas = ExtResource("2_cko2x")
 region = Rect2(0, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6bv5"]
-atlas = ExtResource("2_cko2x")
-region = Rect2(32, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fknpc"]
-atlas = ExtResource("2_cko2x")
-region = Rect2(64, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ckti"]
-atlas = ExtResource("2_cko2x")
-region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q103l"]
-atlas = ExtResource("2_cko2x")
-region = Rect2(0, 224, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8g1j"]
 atlas = ExtResource("2_cko2x")
 region = Rect2(32, 224, 32, 32)
@@ -86,6 +79,34 @@ region = Rect2(96, 224, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p2yg"]
 atlas = ExtResource("2_cko2x")
 region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2tlk"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwfow"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ehf7"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6bv5"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fknpc"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ckti"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q103l"]
+atlas = ExtResource("2_cko2x")
+region = Rect2(0, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir6m4"]
 atlas = ExtResource("2_cko2x")
@@ -150,9 +171,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xeq3v")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -193,6 +214,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_y8g1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxtxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0plgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p2yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2tlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwfow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ehf7")
+}],
+"loop": 0,
+"name": &"phase",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c6bv5")
 }, {
 "duration": 1.0,
@@ -204,26 +251,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q103l")
 }],
-"loop": 1,
-"name": &"skill1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y8g1j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oxtxo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0plgk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0p2yg")
-}],
-"loop": 1,
-"name": &"skill2",
-"speed": 5.0
+"loop": 0,
+"name": &"rewind",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -267,21 +297,97 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sc1h"]
-radius = 9.0
-height = 26.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yijdt"]
+size = Vector2(16, 25.5)
 
-[node name="Player" type="CharacterBody2D" unique_id=1932560746]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nnvp3"]
+streams_count = 6
+stream_0/stream = ExtResource("3_ln1lg")
+stream_1/stream = ExtResource("4_wpukm")
+stream_2/stream = ExtResource("5_yiue1")
+stream_3/stream = ExtResource("6_7v3gk")
+stream_4/stream = ExtResource("7_i638c")
+stream_5/stream = ExtResource("8_d1kdx")
+
+[sub_resource type="Animation" id="Animation_ln1lg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_wpukm"]
+resource_name = "end"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0.8), Vector2(0.9, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yiue1"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0.8), Vector2(0.9, 1.1), Vector2(0.88, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7v3gk"]
+_data = {
+&"RESET": SubResource("Animation_ln1lg"),
+&"end": SubResource("Animation_wpukm"),
+&"start": SubResource("Animation_yiue1")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=657502578]
 script = ExtResource("1_vyvq2")
-move_speed = null
+SPEED = 150.0
+JUMP_VELOCITY = -300.0
+JUMP_AUDIO_VOLUME_DB = -25.0
+WALK_AUDIO_VOLUME_DB = -20.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=318008518]
+[node name="Anchor" type="Node2D" parent="." unique_id=77122533]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor" unique_id=318008518]
+unique_name_in_owner = true
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_kiui6")
-animation = &"skill2"
+animation = &"phase"
 autoplay = "idle"
-frame_progress = 0.13846661
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996260437]
-position = Vector2(0, -3)
-shape = SubResource("CapsuleShape2D_7sc1h")
+position = Vector2(-1, -3.25)
+shape = SubResource("RectangleShape2D_yijdt")
+
+[node name="WalkAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1793386853]
+stream = SubResource("AudioStreamRandomizer_nnvp3")
+
+[node name="JumpAnimationPlayer" type="AnimationPlayer" parent="." unique_id=781514893]
+libraries/ = SubResource("AnimationLibrary_7v3gk")
+
+[node name="JumpAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=242850957]
+stream = ExtResource("9_wpukm")
+
+[node name="Rewind" type="Node" parent="." unique_id=924973960]
+script = ExtResource("10_yiue1")
+rewind_time = 3.0
+cooldown = 4.0
+
+[node name="Phase" type="Node" parent="." unique_id=973010367]
+script = ExtResource("11_7v3gk")
+phase_time = 2.0
+cooldown_time = 4.0

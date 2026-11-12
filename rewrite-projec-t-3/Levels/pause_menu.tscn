@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cj5f0mab2snpc"]
+
+[ext_resource type="Script" uid="uid://c6ar5vyoe6hlx" path="res://Scripts/pause_menu.gd" id="1_oda3r"]
+[ext_resource type="Theme" uid="uid://bpbd56dj3g4u4" path="res://sci-fi game assets/UI/menu_theme.tres" id="2_nhmly"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1105591181]
+process_mode = 3
+layer = 10
+script = ExtResource("1_oda3r")
+
+[node name="PausePanel" type="Control" parent="." unique_id=1079729880]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nhmly")
+
+[node name="Dim" type="ColorRect" parent="PausePanel" unique_id=2005419391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.03137255, 0.05882353, 0.7019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="PausePanel" unique_id=989683445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel/CenterContainer" unique_id=1078048188]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PausePanel/CenterContainer/VBoxContainer" unique_id=1244014229]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30980393, 0.81960785, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Paused"
+
+[node name="ResumeButton" type="Button" parent="PausePanel/CenterContainer/VBoxContainer" unique_id=1891128807]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="PausePanel/CenterContainer/VBoxContainer" unique_id=1782858380]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
