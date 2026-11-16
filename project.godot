@@ -21,6 +21,7 @@ BackgroundMusic="*uid://co0vixioi1v11"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
