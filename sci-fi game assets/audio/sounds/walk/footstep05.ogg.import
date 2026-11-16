@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d01snvhsxlbfv"
+path="res://.godot/imported/footstep05.ogg-6d1fca90c52e3b1889ce1bc43307cff1.oggvorbisstr"
+
+[deps]
+
+source_file="res://sci-fi game assets/audio/sounds/walk/footstep05.ogg"
+dest_files=["res://.godot/imported/footstep05.ogg-6d1fca90c52e3b1889ce1bc43307cff1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
